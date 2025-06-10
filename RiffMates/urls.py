@@ -21,10 +21,12 @@ from django.urls import path
 from home import views as home_views
 from home import views as about_views
 from home import views as version_views
+from home import views as news_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("credits/", home_views.credits),
     path("about/", about_views.about),
     path("version/", version_views.version),
+    path("news/", news_views.news, name="news"),
 ]

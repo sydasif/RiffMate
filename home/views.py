@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.http import JsonResponse
 
+from django.shortcuts import render
+
 
 def credits(request):
     content = "Nicky\nJohn"
@@ -16,3 +18,14 @@ def about(request):
 def version(request):
     content = {"version": "1.0.0"}
     return JsonResponse(content, content_type="text/json")
+
+
+def news(request):
+    data = {
+        "news": [
+            "RiffMates now has a news pages!",
+            "RiffMates now has a web page!",
+        ]
+    }
+
+    return render(request, "news.html", data)
